@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Consultas a otra pagina</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.0/lity.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style media="screen">
+      .btn-info-js{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 10000;
+      }
+      .lity-iframe .lity-container, .lity-youtube .lity-container, .lity-vimeo .lity-container, .lity-facebookvideo .lity-container, .lity-googlemaps .lity-container{
+        max-width: 1100px;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="row" style="padding:30px 0px;">
+      <div class="col-sm-12">
+        <a class="btn btn-primary" href="https://cfdiau.sat.gob.mx/nidp/wsfed/ep?id=SATUPCFDiCon&sid=0&option=credential&sid=0" data-lity data-lity-desc="Photo of a flower">Iniciar session</a>
+        <a class="btn btn-primary" href="https://portalcfdi.facturaelectronica.sat.gob.mx/" data-lity data-lity-desc="Photo of a flower">Consulta datos</a>
+        <a class="btn btn-info btn-info-js" href="#">Obtener datos de tabla</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.0/lity.js"></script>
+  <script type="text/javascript">
+    $('.btn-info-js').click(function(event){
+      event.preventDefault();
+
+        //var prueba = $('.lity-iframe').contents().find('.lity-iframe-container');
+        var tabla = $('iframe').first().contents().find('html');
+        console.log(tabla);
+
+    });
+  </script>
+  </body>
+</html>
